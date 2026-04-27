@@ -8,3 +8,7 @@ export function validateLogin(email, password) {
 
   return hasValidDomain && isLongEnough;
 }
+
+export function addReminder(reminders, newReminder) {
+  return [...reminders, newReminder];
+}
