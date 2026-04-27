@@ -15,4 +15,5 @@ describe('validateLogin', () =>{
     expect(validateLogin('student@edu.p.lodz.pl', 'abc')).toBe(false)
   })
 
+
 })
