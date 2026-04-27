@@ -1,3 +1,10 @@
 export function validateLogin(email, password) {
-	return email.endsWith('@edu.p.lodz.pl') && password.length >= 4
+  if (!email || !password) {
+    return false; 
   }
+
+  const hasValidDomain = email.endsWith('@edu.p.lodz.pl');
+  const isLongEnough = password.length >= 4;
+
+  return hasValidDomain && isLongEnough;
+}

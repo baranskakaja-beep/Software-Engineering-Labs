@@ -15,5 +15,12 @@ describe('validateLogin', () =>{
     expect(validateLogin('student@edu.p.lodz.pl', 'abc')).toBe(false)
   })
 
+  it('returns false when email is empty', () => {
+    expect(validateLogin('', 'pass123')).toBe(false)
+  })
+
+  it('returns false when password is empty', () => {
+    expect(validateLogin('student@edu.p.lodz.pl', '')).toBe(false)
+  })
 
 })
