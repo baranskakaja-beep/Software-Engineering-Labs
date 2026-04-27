@@ -1,8 +1,6 @@
+import { validateLogin } from '../utils/schedulerUtils'
 
-import {validateLogin} from "../utils/schedulerUtils"
-
-
-describe('validateLogin', () =>{
+describe('validateLogin', () => {
   it('returns true for valid university email and password', () => {
     expect(validateLogin('student@edu.p.lodz.pl', 'pass123')).toBe(true)
   })
@@ -22,5 +20,4 @@ describe('validateLogin', () =>{
   it('returns false when password is empty', () => {
     expect(validateLogin('student@edu.p.lodz.pl', '')).toBe(false)
   })
-
 })
