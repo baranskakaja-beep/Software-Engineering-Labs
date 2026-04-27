@@ -9,6 +9,17 @@ export function validateLogin(email, password) {
   return hasValidDomain && isLongEnough;
 }
 
-export function addReminder(reminders, newReminder) {
-  return [...reminders, newReminder];
-}
+export const addReminder = (reminders, newReminder) => [...reminders, newReminder];
+
+export const organizeReminders = (reminders, dateStr) => reminders.reduce(
+  (acc, r) => {
+    acc[r.dueDate < dateStr ? 'overdue' : 'upcoming'].push(r);
+    return acc;
+  }, 
+  { overdue: [], upcoming: [] }
+);
+
+export const getNextFreeSlot = (events, time) => {
+  const conflict = events.find(e => time >= e.start && time < e.end);
+  return conflict ? conflict.end : time;
+};
