@@ -1,3 +1,4 @@
+import { expect, test } from 'vitest';
 import { addReminder, organizeReminders, getNextFreeSlot } from '../utils/schedulerUtils';
 
 test('addReminder adds item to list', () => {

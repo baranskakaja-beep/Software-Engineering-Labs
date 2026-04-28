@@ -1,3 +1,4 @@
+import { describe, expect, it } from 'vitest'
 import { validateLogin } from '../utils/schedulerUtils'
 
 describe('validateLogin', () => {
